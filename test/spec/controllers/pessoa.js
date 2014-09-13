@@ -3,7 +3,7 @@
 describe('Controller: PessoaCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('minsafeApp'));
+  beforeEach(module('angularMongoApp'));
 
   var PessoaCtrl,
     scope;

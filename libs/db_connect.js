@@ -6,7 +6,7 @@ var mongoose = require('mongoose')
     ;
 
 module.exports = function() {
-    var url = env_url[process.env.NODE_ENV];
+    var url = env_url['development'];
 
     if(!single_connection) {
         single_connection = mongoose.connect(url);
