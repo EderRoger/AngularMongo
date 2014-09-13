@@ -49,7 +49,6 @@ angular.module('angularMongoApp')
             if(confirm){
             $http({ method: 'delete', url: '/pessoa/' + $scope.pessoa._id })
                 .success(function (response, status, headers) {
-                    console.log(response);
                     $scope.pessoa = response;
                     $location.path('/pessoas');
                 });
