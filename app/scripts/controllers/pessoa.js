@@ -29,7 +29,7 @@ angular.module('angularMongoApp')
                 .success(function (response, status, headers) {
                     console.log(response);
                     $scope.pessoa = response;
-                    $location.path('/pessoas/'+ $scope.pessoa._id);
+                    $location.path('/pessoas/' + $scope.pessoa._id);
                 });
         }
 
@@ -41,5 +41,14 @@ angular.module('angularMongoApp')
                     $location.path('/pessoas');
                 });
         }
+
+    }).controller('PessoaListCtrl', function ($scope, $http, $routeParams, $location) {
+        $scope.title = "Pessoas";
+
+        $http({ method: 'GET', url: '/pessoas' })
+            .success(function (response, status, headers) {
+                console.log(response);
+                $scope.pessoas = response;
+            });
 
     });

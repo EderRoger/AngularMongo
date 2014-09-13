@@ -1,26 +1,30 @@
 <h1>{{title}}</h1>
-<form name="form" class="form-horizontal" ng-submit="save()">
-    <div class="form-group">
-        <label class="col-lg-1 control-label">Nome*</label>
+<div class="table-responsive">
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th width="2%">#</th>
+            <th width="49%">Nome</th>
+            <th width="49%">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="pessoa in pessoas | orderBy: 'nome'">
+            <td>
+                <a href="#/pessoas/{{pessoa._id}}" class="btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+            </td>
+            <td>{{ pessoa.nome | uppercase }}</td>
+            <td>{{ pessoa.email | lowercase }}</td>
+        </tr>
+        <tr ng-show="pessoas.length == 0">
+            <td colspan="4">
+                <span>Nenhum registro encontrado!</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-        <div class="col-lg-1">
-            <input type="text" ng-model="pessoa.nome" placeholder="Nome">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-lg-1 control-label">Email</label>
-
-        <div class="col-lg-1">
-            <input type="text" ng-model="pessoa.email" placeholder="E-mail">
-        </div>
-    </div>
-    <div class="form-horizontal">
-        <div class="col-lg-1">
-            <button type="submit" class="btn btn-primary">{{btnLabel}}</button>
-        </div>
-        <div class="col-lg-1">
-            <button type="button" ng-click="remove()" class="btn btn-danger" ng-if="pessoa._id">Deletar</button>
-        </div>
-    </div>
-</form>        
+<a class="btn btn-primary" href="#/pessoas/novo">Novo</a>

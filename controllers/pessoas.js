@@ -5,7 +5,9 @@ module.exports = function (app) {
     var PessoaController = {
 
         index: function (req, res) {
-            res.redirect('/app/#/pessoas');
+            Pessoa.find(function(erro, pessoas){
+               res.send(pessoas);
+            });
         },
 
         create: function (req, res) {
@@ -39,7 +41,7 @@ module.exports = function (app) {
             var _id = req.session.pessoa._id;
             Pessoa.findById(_id, function (erro, pessoa) {
                 pessoa.save(function () {
-                    res.redirect('/pessoas');
+                    res.redirect('/pessoas/novo');
                 });
             });
         },

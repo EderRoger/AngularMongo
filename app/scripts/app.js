@@ -18,10 +18,14 @@ angular_mongo_app.config(['$routeProvider',
         $routeProvider.
             when('/pessoas', {
                 templateUrl: 'views/pessoa/index.html',
+                controller: 'PessoaListCtrl'
+            }).
+            when('/pessoas/novo', {
+                templateUrl: 'views/pessoa/form.html',
                 controller: 'PessoaCtrl'
             }).
             when('/pessoas/:id', {
-                templateUrl: 'views/pessoa/index.html',
+                templateUrl: 'views/pessoa/form.html',
                 controller: 'PessoaCtrl'
             }).
             otherwise({
