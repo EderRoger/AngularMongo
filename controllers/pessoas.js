@@ -31,17 +31,19 @@ module.exports = function (app) {
         },
 
         edit: function (req, res) {
-            var _id = req.session.pessoa._id;
+            var _id = req.params.id;
             Pessoa.findById(_id, function (erro, pessoa) {
-                res.render('pessoas/edit', pessoa);
+                res.send(pessoa);
             });
         },
 
         update: function (req, res) {
-            var _id = req.session.pessoa._id;
+            var _id = req.params.id;
             Pessoa.findById(_id, function (erro, pessoa) {
+                pessoa.nome = req.body.nome;
+                pessoa.email = req.body.email;
                 pessoa.save(function () {
-                    res.redirect('/pessoas/novo');
+                    res.send('OK');
                 });
             });
         },

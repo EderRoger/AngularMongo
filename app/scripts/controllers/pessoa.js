@@ -24,13 +24,24 @@ angular.module('angularMongoApp')
                 });
         }
         $scope.save = function () {
+            alert($scope.pessoa._id);
             var json = angular.toJson($scope.pessoa);
-            $http({ method: 'POST', url: '/pessoa', data: json })
-                .success(function (response, status, headers) {
-                    console.log(response);
-                    $scope.pessoa = response;
-                    $location.path('/pessoas/' + $scope.pessoa._id);
-                });
+            if($scope.pessoa._id){
+                $http({ method: 'PUT', url: '/pessoa/'+ $scope.pessoa._id, data: json })
+                    .success(function (response, status, headers) {
+                        console.log(response);
+                        $scope.pessoa = response;
+                        $location.path('/pessoas/');
+                    });
+            }else{
+                $http({ method: 'POST', url: '/pessoa', data: json })
+                    .success(function (response, status, headers) {
+                        console.log(response);
+                        $scope.pessoa = response;
+                        $location.path('/pessoas/' + $scope.pessoa._id);
+                    });
+            }
+
         }
 
         $scope.remove = function () {
