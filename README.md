@@ -31,6 +31,17 @@ Clone the project
 
 `$ node app.js` or `$ npm start`
 
+Execute Tests
+=============
+Necessary Karma installed!
+
+On project Root
+
+`karma start test/karma.conf.js`
+
+Or Grunt test
+
+`grunt test`
 
 
 Open your web browser 

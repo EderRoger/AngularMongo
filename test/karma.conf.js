@@ -22,6 +22,7 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-cookies/angular-cookies.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/angular-route/angular-route.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
@@ -47,7 +48,8 @@ module.exports = function(config) {
 
     // Which plugins to enable
     plugins: [
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-chrome-launcher'
     ],
 
     // Continuous Integration mode
