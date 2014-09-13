@@ -9,22 +9,22 @@ module.exports = function (app) {
         },
 
         create: function (req, res) {
-            console.log(req.body);
             Pessoa.create(req.body, function(erro, pessoa) {
                 if(erro){
                     res.redirect('/');
                 }else{
-                    req.session.pessoa = pessoa;
+                    //req.session.pessoa = pessoa;
                     console.log(pessoa);
-                    res.redirect('/pessoas/'+ pessoa._id);
+                    res.send(pessoa);
+                    //res.redirect('/app/#/pessoas/'+ pessoa._id);
                 }
             });
         },
 
         show: function (req, res) {
-            var _id = req.session.pessoa._id;
+            var _id = req.params.id;
             Pessoa.findById(_id, function (erro, pessoa) {
-                res.render('/app/pessoas/show', pessoa);
+                res.send(pessoa);
             });
         },
 
@@ -45,13 +45,10 @@ module.exports = function (app) {
         },
 
         destroy: function (req, res) {
-            var _id = req.session.pessoa._id;
+            var _id = req.params.id;
             Pessoa.findById(_id, function (erro, pessoa) {
-                var contatoID = req.params.id;
                 pessoa.remove();
-                pessoa.save(function () {
-                    res.redirect('/pessoas');
-                });
+                res.send("OK");
             });
         }
     }

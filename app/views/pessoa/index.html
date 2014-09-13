@@ -1,6 +1,26 @@
-<div>{{title}}</div>
+<h1>{{title}}</h1>
 <form name="form" class="form-horizontal" ng-submit="save()">
-    <input type="text" ng-model="pessoa.nome" placeholder="Nome">
-    <input type="text" ng-model="pessoa.email" placeholder="E-mail">
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <div class="form-group">
+        <label class="col-lg-1 control-label">Nome*</label>
+
+        <div class="col-lg-1">
+            <input type="text" ng-model="pessoa.nome" placeholder="Nome">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-1 control-label">Email</label>
+
+        <div class="col-lg-1">
+            <input type="text" ng-model="pessoa.email" placeholder="E-mail">
+        </div>
+    </div>
+    <div class="form-horizontal">
+        <div class="col-lg-1">
+            <button type="submit" class="btn btn-primary">{{btnLabel}}</button>
+        </div>
+        <div class="col-lg-1">
+            <button type="button" ng-click="remove()" class="btn btn-danger" ng-if="pessoa._id">Deletar</button>
+        </div>
+    </div>
 </form>        
