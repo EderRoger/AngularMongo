@@ -15,10 +15,7 @@ module.exports = function (app) {
                 if(erro){
                     res.redirect('/');
                 }else{
-                    //req.session.pessoa = pessoa;
-                    console.log(pessoa);
                     res.send(pessoa);
-                    //res.redirect('/app/#/pessoas/'+ pessoa._id);
                 }
             });
         },

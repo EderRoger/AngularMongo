@@ -28,14 +28,12 @@ angular.module('angularMongoApp')
             if($scope.pessoa._id){
                 $http({ method: 'PUT', url: '/pessoa/'+ $scope.pessoa._id, data: json })
                     .success(function (response, status, headers) {
-                        console.log(response);
                         $scope.pessoa = response;
                         $location.path('/pessoas/');
                     });
             }else{
                 $http({ method: 'POST', url: '/pessoa', data: json })
                     .success(function (response, status, headers) {
-                        console.log(response);
                         $scope.pessoa = response;
                         $location.path('/pessoas/' + $scope.pessoa._id);
                     });
@@ -60,7 +58,6 @@ angular.module('angularMongoApp')
 
         $http({ method: 'GET', url: '/pessoas' })
             .success(function (response, status, headers) {
-                console.log(response);
                 $scope.pessoas = response;
             });
 
