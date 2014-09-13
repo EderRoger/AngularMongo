@@ -24,7 +24,6 @@ angular.module('angularMongoApp')
                 });
         }
         $scope.save = function () {
-            alert($scope.pessoa._id);
             var json = angular.toJson($scope.pessoa);
             if($scope.pessoa._id){
                 $http({ method: 'PUT', url: '/pessoa/'+ $scope.pessoa._id, data: json })
@@ -45,12 +44,16 @@ angular.module('angularMongoApp')
         }
 
         $scope.remove = function () {
+
+            var confirm = window.confirm("Confirma deletar?");
+            if(confirm){
             $http({ method: 'delete', url: '/pessoa/' + $scope.pessoa._id })
                 .success(function (response, status, headers) {
                     console.log(response);
                     $scope.pessoa = response;
                     $location.path('/pessoas');
                 });
+            }
         }
 
     }).controller('PessoaListCtrl', function ($scope, $http, $routeParams, $location) {
