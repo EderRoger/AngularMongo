@@ -1,0 +1,7 @@
+{
+    "SECRET": "AngularMongo",
+    "KEY": "angular_mongo.sid",
+    "MAX_AGE": {
+        "maxAge": 3600000
+    }
+}
