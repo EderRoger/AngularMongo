@@ -1,1 +1,6 @@
 <div>{{title}}</div>
+<form name="form" class="form-horizontal" ng-submit="save()">
+    <input type="text" ng-model="pessoa.nome" placeholder="Nome">
+    <input type="text" ng-model="pessoa.email" placeholder="E-mail">
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>        

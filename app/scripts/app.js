@@ -20,6 +20,10 @@ angular_mongo_app.config(['$routeProvider',
                 templateUrl: 'views/pessoa/index.html',
                 controller: 'PessoaCtrl'
             }).
+            when('/pessoas/:id', {
+                templateUrl: 'views/pessoa/index.html',
+                controller: 'PessoaCtrl'
+            }).
             otherwise({
                 redirectTo: '/pessoas'
             });

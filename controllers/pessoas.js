@@ -9,19 +9,22 @@ module.exports = function (app) {
         },
 
         create: function (req, res) {
-            var _id = req.session.pessoa._id;
-            Pessoa.findById(_id, function (erro, pessoa) {
-                pessoa.save(function () {
-                    res.redirect('/app/#/pessoas');
-                });
+            console.log(req.body);
+            Pessoa.create(req.body, function(erro, pessoa) {
+                if(erro){
+                    res.redirect('/');
+                }else{
+                    req.session.pessoa = pessoa;
+                    console.log(pessoa);
+                    res.redirect('/pessoas/'+ pessoa._id);
+                }
             });
         },
 
         show: function (req, res) {
             var _id = req.session.pessoa._id;
             Pessoa.findById(_id, function (erro, pessoa) {
-                var pessoaID = req.params.id;
-                res.render('pessoas/show', pessoa);
+                res.render('/app/pessoas/show', pessoa);
             });
         },
 
