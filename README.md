@@ -29,7 +29,9 @@ Clone the project
 
 `$ bower install`
 
-`$ node app.js`
+`$ node app.js` or `$ npm start`
+
+
 
 Open your web browser 
 
