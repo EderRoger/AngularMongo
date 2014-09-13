@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name minsafeApp.controller:PessoaCtrl
  * @description
  * # PessoaCtrl
+ * # PessoaListCtrl
  * Controller of the angularMongoApp
  */
 angular.module('angularMongoApp')
