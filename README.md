@@ -22,9 +22,13 @@ How to Install
 Clone the project
 
 `$ git clone git@github.com:EderRoger/AngularMongo.git`
+
 `$ cd AngularMongo`
+
 `$ npm install`
+
 `$ bower install`
+
 `$ node app.js`
 
 Open your web browser 
