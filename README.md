@@ -31,8 +31,13 @@ Clone the project
 
 `$ node app.js` or `$ npm start`
 
+Open your web browser 
+
+[http://localhost:3000/app/#/pessoas](http://localhost:3000/app/#/pessoas)
+
 Execute Tests
 =============
+
 Necessary Karma installed!
 
 On project Root
@@ -42,11 +47,6 @@ On project Root
 Or Grunt test
 
 `grunt test`
-
-
-Open your web browser 
-
-[http://localhost:3000/app/#/pessoas](http://localhost:3000/app/#/pessoas)
 
 
 Sources:
