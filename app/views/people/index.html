@@ -4,27 +4,27 @@
         <thead>
         <tr>
             <th width="2%">#</th>
-            <th width="49%">Nome</th>
+            <th width="49%">Name</th>
             <th width="49%">Email</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="pessoa in pessoas | orderBy: 'nome'">
+        <tr ng-repeat="people in people | orderBy: 'name'">
             <td>
-                <a href="#/pessoas/{{pessoa._id}}" class="btn btn-default btn-xs">
+                <a href="#/people/{{people._id}}" class="btn btn-default btn-xs">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
             </td>
-            <td>{{ pessoa.nome | uppercase }}</td>
-            <td>{{ pessoa.email | lowercase }}</td>
+            <td>{{ people.name | uppercase }}</td>
+            <td>{{ people.email | lowercase }}</td>
         </tr>
-        <tr ng-show="pessoas.length == 0">
+        <tr ng-show="people.length == 0">
             <td colspan="4">
-                <span>Nenhum registro encontrado!</span>
+                <span>No data to show!</span>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
 
-<a class="btn btn-primary" href="#/pessoas/novo">Novo</a>
+<a class="btn btn-primary" href="#/people/new">New</a>

@@ -35,7 +35,7 @@ app.use(error.notFound);
 app.use(error.serverError);
 
 server.listen(3000, function(){
-    console.log("Rodando Angular_Mongo.");
+    console.log("Running Angular_Mongo.");
 });
 
 module.exports = app;

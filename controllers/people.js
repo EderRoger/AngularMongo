@@ -1,45 +1,45 @@
 module.exports = function (app) {
 
-    var Pessoa = app.models.pessoa;
+    var People = app.models.people;
 
-    var PessoaController = {
+    var PeopleController = {
 
         index: function (req, res) {
-            Pessoa.find(function(erro, pessoas){
-               res.send(pessoas);
+            People.find(function(erro, people){
+               res.send(people);
             });
         },
 
         create: function (req, res) {
-            Pessoa.create(req.body, function(erro, pessoa) {
+            People.create(req.body, function(erro, people) {
                 if(erro){
                     res.redirect('/');
                 }else{
-                    res.send(pessoa);
+                    res.send(people);
                 }
             });
         },
 
         show: function (req, res) {
             var _id = req.params.id;
-            Pessoa.findById(_id, function (erro, pessoa) {
-                res.send(pessoa);
+            People.findById(_id, function (erro, people) {
+                res.send(people);
             });
         },
 
         edit: function (req, res) {
             var _id = req.params.id;
-            Pessoa.findById(_id, function (erro, pessoa) {
-                res.send(pessoa);
+            People.findById(_id, function (erro, people) {
+                res.send(people);
             });
         },
 
         update: function (req, res) {
             var _id = req.params.id;
-            Pessoa.findById(_id, function (erro, pessoa) {
-                pessoa.nome = req.body.nome;
-                pessoa.email = req.body.email;
-                pessoa.save(function () {
+            People.findById(_id, function (erro, people) {
+                people.name = req.body.name;
+                people.email = req.body.email;
+                people.save(function () {
                     res.send('OK');
                 });
             });
@@ -47,11 +47,11 @@ module.exports = function (app) {
 
         destroy: function (req, res) {
             var _id = req.params.id;
-            Pessoa.findById(_id, function (erro, pessoa) {
-                pessoa.remove();
+            People.findById(_id, function (erro, people) {
+                people.remove();
                 res.send("OK");
             });
         }
     }
-    return PessoaController;
+    return PeopleController;
 };

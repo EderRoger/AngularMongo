@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 <form name="form" class="form-horizontal" ng-submit="save()">
     <div class="form-group">
-        <label class="col-lg-1 control-label">Nome*</label>
+        <label class="col-lg-1 control-label">Name*</label>
 
         <div class="col-lg-1">
-            <input type="text" ng-model="pessoa.nome" placeholder="Nome" required="true">
+            <input type="text" ng-model="people.name" placeholder="Name" required="true">
         </div>
     </div>
 
@@ -12,14 +12,14 @@
         <label class="col-lg-1 control-label">Email*</label>
 
         <div class="col-lg-1">
-            <input type="text" ng-model="pessoa.email" placeholder="E-mail" required="true">
+            <input type="text" ng-model="people.email" placeholder="E-mail" required="true">
         </div>
     </div>
     <br/>
 
     <div class="">
         <button type="submit" class="btn btn-primary">{{btnLabel}}</button>
-        <button type="button" ng-click="remove()" class="btn btn-danger" ng-if="pessoa._id">Deletar</button>
-        <a class="btn btn-info" href="#/pessoas">Voltar</a>
+        <button type="button" ng-click="remove()" class="btn btn-danger" ng-if="people._id">Delete</button>
+        <a class="btn btn-info" href="#/people">Voltar</a>
     </div>
 </form>        

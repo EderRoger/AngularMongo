@@ -16,19 +16,19 @@ var angular_mongo_app = angular
 angular_mongo_app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-            when('/pessoas', {
-                templateUrl: 'views/pessoa/index.html',
-                controller: 'PessoaListCtrl'
+            when('/people', {
+                templateUrl: 'views/people/index.html',
+                controller: 'PeopleListCtrl'
             }).
-            when('/pessoas/novo', {
-                templateUrl: 'views/pessoa/form.html',
-                controller: 'PessoaCtrl'
+            when('/people/new', {
+                templateUrl: 'views/people/form.html',
+                controller: 'PeopleCtrl'
             }).
-            when('/pessoas/:id', {
-                templateUrl: 'views/pessoa/form.html',
-                controller: 'PessoaCtrl'
+            when('/people/:id', {
+                templateUrl: 'views/people/form.html',
+                controller: 'PeopleCtrl'
             }).
             otherwise({
-                redirectTo: '/pessoas'
+                redirectTo: '/people'
             });
     }]);
