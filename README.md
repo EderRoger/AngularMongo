@@ -33,7 +33,7 @@ Clone the project
 
 Open your web browser 
 
-[http://localhost:3000/app/#/pessoas](http://localhost:3000/app/#/pessoas)
+[http://localhost:3000/app/#/people](http://localhost:3000/app/#/people)
 
 Execute Tests
 =============
